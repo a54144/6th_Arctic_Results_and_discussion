@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Fixed fullscreen backgrounds - fullPage.js</title>
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<style>
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#Cover{
+		background-size: cover;
+		background-image: url(imgs/Cover.jpg);
+		padding: 6% 0 0 0;
+	}
+	
+	#section0{
+		background-image: url(imgs/CV.jpg);
+		padding: 30% 0 0 0;
+	}
+	
+	#section2{
+		background-image: url(imgs/polar_bear.jpg);
+		padding: 6% 0 0 0;
+	}
+	#section3{
+		background-image: url(imgs/XMU.jpg);
+		padding: 1% 0 0 0;
+	}
+	#section3 h1{
+		color: #000;
+	}
+
+
+ 	/*Adding background for the slides
+	* --------------------------------------- */
+	#slide1{
+		background-image: url(imgs/Sun.jpg);
+		padding: 9% 0 0 0;
+	}
+	#slide2{
+		background-image: url(imgs/Snowbow.jpg);
+		padding: 6% 0 0 0;
+	}
+	#slide3{
+		background-image: url(imgs/Moon.jpg);
+		padding: 6% 0 0 0;
+	}
+
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu li a {
+		color: #fff;
+	}
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="jquery.fullPage.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+
+				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+				css3:false
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section " id="Cover"></div>
+	
+	<div class="section " id="section0"><h1>Investigation Cruise Vessel</h1></div>
+	
+	<div class="section" id="section1">
+	    <div class="slide" id="slide1"><h1>Sun</h1></div>
+	    <div class="slide" id="slide2"><h1>Snowbow</h1></div>
+		<div class="slide" id="slide3"><h1>Moon</h1></div>
+		
+	</div>
+	<div class="section" id="section2"><h1>Polar Bear </h1></div>
+	<div class="section" id="section3"><h1>XMU @ the Arctic</h1></div>
+	
+</div>
+
+</body>
+</html>
